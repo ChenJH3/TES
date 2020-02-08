@@ -48,10 +48,9 @@ a:hover{ color:#06c; text-decoration: none!important}
 .weather{ position:absolute; right:.3rem; top:0; line-height: .75rem;}
 .weather img{ width:.37rem; display: inline-block; vertical-align: middle;}
 .weather span{color:rgba(255,255,255,.7); font-size: .18rem; padding-right: .1rem;}
-.mainbox{ padding:.1rem .1rem 0rem .1rem;}
-.mainbox>ul{}
-.mainbox>ul>li{ float: left; padding: 0 .1rem}
 
+.mainbox{ padding:.1rem .1rem 0rem .1rem;}
+.mainbox>ul>li{ float: left; padding: 0 .1rem}
 .mainbox>ul>li{ width: 30%}
 .mainbox>ul>li:nth-child(2){ width: 40%;padding: 0}
 
@@ -66,7 +65,7 @@ a:hover{ color:#06c; text-decoration: none!important}
 .boxfoot:before,
 .boxfoot:after{ position:absolute; width: .1rem; height: .1rem;  content: "";border-bottom: 2px solid #02a6b5; bottom: 0;}
 
-.bar{background:rgba(101,132,226,.1); padding: .15rem;}
+.bar{background:rgba(101,132,226,.1); padding: .15rem;height: 2.0rem;position:center;}
 .barbox li,.barbox2 li{ width:50%; text-align: center; position: relative; z-index: 100;}
 .barbox:before,
 .barbox:after{ position:absolute; width: .3rem; height: .1rem; content: ""; }
@@ -76,19 +75,26 @@ a:hover{ color:#06c; text-decoration: none!important}
 .barbox li:first-child:before{ position:absolute; content: ""; height:50%; width: 1px; background: rgba(255,255,255,.2); right: 0; top: 25%;}
 
 .barbox{  border: 1px solid rgba(25,186,139,.17); position: relative;}
-.barbox li{ font-size: .7rem; color: #ffeb7b; padding: .05rem 0;  font-family:electronicFont; font-weight: bold;}
+/* .barbox li{ font-size: .7rem; color: #ffeb7b; padding: .05rem 0;  font-family:electronicFont; font-weight: bold;} */
+.barbox li{ font-size: .6rem; color: #ffeb7b; padding: .05rem 0;  font-family: Gotham, "Helvetica Neue", Helvetica, Arial, "sans-serif"; font-weight: bold;}
+
 .barbox2 li{ font-size: .19rem; color:rgba(255,255,255,.7); padding-top: .1rem;}
 
 .map{  position:relative; height: 7.2rem; z-index: 9;}
 .map4{ width: 200%; height:7rem;  position: relative; left: -50%; top: 4%; margin-top: .2rem; z-index: 5;}
 .map1,.map2,.map3{ position:absolute; opacity: .5}
-.map1{ width:6.43rem; z-index: 2;top:.45rem; left: .7rem;  animation: myfirst2 15s infinite linear;}
-.map2{ width:5.66rem; top:.85rem; left:1.2rem; z-index: 3; opacity: 0.2; animation: myfirst 10s infinite linear;}
-.map3{ width:5.18rem; top:1.07rem; left: 1.4rem; z-index: 1;}
+.map1{ width:6.43rem; z-index: 2;top:-.65rem; left: .7rem;  animation: myfirst2 15s infinite linear;}
+.map2{ width:5.66rem; top:0.85rem; left:1.2rem; z-index: 3; opacity: 0.2; animation: myfirst 10s infinite linear;}
+.map3{ width:5.18rem; top:0.07rem; left: 1.4rem; z-index: 1;}
 
-
-
-
+.risk1,.risk2,.risk3{float: left; width: 33.3333%; height: 100%;}
+#risk1,#risk2,#risk3{height: calc(100% - 30px); }
+.zhibiao span{ padding-top: 0px; display: block; text-align: center; color: #fff; font-size: 16px;}
+.num,.zhibiao{height: 100%; width: 100%;}
+.num{padding-right: 20px;}
+.numbt{ font-size: 24px; color: #fff; padding-top:14px;}
+.numbt span{font-size: 18px; padding-left: 10px;color: #fff; }
+.numtxt{ color: #fef000; font-size: 60px; font-family: arial; border-top: 1px solid rgba(255,255,255,.1);border-bottom: 1px solid rgba(255,255,255,.1); padding: 10px 0; margin: 18px 0; font-weight: bold; letter-spacing: 2px;}
 
 .tabs { text-align: center; padding: .1rem 0 0 0;}
 .tabs a {
@@ -122,7 +128,7 @@ a:hover{ color:#06c; text-decoration: none!important}
 .wrap{ height:2.54rem; overflow: hidden;}
 .wrap li{  line-height:.42rem; height:.42rem; font-size: .18rem; text-indent: .24rem; margin-bottom: .1rem; }
 .wrap li p{border: 1px solid rgba(25,186,139,.17);color: rgba(255,255,255,.6); }
-.sy{ float:left; width: 33%; height:95%; margin-top: .25rem;}
+.sy{ float:left; width: 60%; height:100%; margin-top: .25rem;}
 
 
 .adduser{ height:1.5rem; overflow: hidden;}

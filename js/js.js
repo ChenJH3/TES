@@ -1,13 +1,17 @@
 ﻿
 $(function () {
+    echartsDeviceStatus();
     echarts_1();
-    echarts_2();
+//     echarts_2();
     echarts_4();
-    echarts_31();
-    echarts_32();
-    echarts_33();
-    echarts_5();
-    echarts_6();
+    risk1();
+    risk2();
+    risk3();
+    // echarts_32();
+  //  echarts_33();
+    // echarts_5();
+    // echarts_6();
+ 
     function echarts_1() {
         // 基于准备好的dom，初始化echarts实例
         var myChart = echarts.init(document.getElementById('echart1'));
@@ -29,7 +33,7 @@ $(function () {
             },
             xAxis: [{
                 type: 'category',
-                data: ['商超门店', '教育培训', '房地产', '生活服务', '汽车销售', '旅游酒店', '五金建材'],
+                data: ['1月', '2月', '3月', '4月', '5月', '6月', '7月', '8月', '9月', '10月', '11月', '12月'],
                 axisLine: {
                     show: true,
                     lineStyle: {
@@ -83,7 +87,7 @@ $(function () {
             series: [
                 {
                     type: 'bar',
-                    data: [200, 300, 300, 900, 1500, 1200, 600],
+                    data: [20, 30, 32, 19, 15, 10,26 ,23],
                     barWidth: '35%', //柱子宽度
                     // barGap: 1, //柱子之间间距
                     itemStyle: {
@@ -104,197 +108,6 @@ $(function () {
             myChart.resize();
         });
     }
-    function echarts_2() {
-        // 基于准备好的dom，初始化echarts实例
-        var myChart = echarts.init(document.getElementById('echart2'));
-
-        option = {
-            //  backgroundColor: '#00265f',
-            tooltip: {
-                trigger: 'axis',
-                axisPointer: { type: 'shadow' }
-            },
-            grid: {
-                left: '0%',
-                top: '10px',
-                right: '0%',
-                bottom: '4%',
-                containLabel: true
-            },
-            xAxis: [{
-                type: 'category',
-                data: ['浙江', '上海', '江苏', '广东', '北京', '深圳', '安徽'],
-                axisLine: {
-                    show: true,
-                    lineStyle: {
-                        color: "rgba(255,255,255,.1)",
-                        width: 1,
-                        type: "solid"
-                    },
-                },
-
-                axisTick: {
-                    show: false,
-                },
-                axisLabel: {
-                    interval: 0,
-                    // rotate:50,
-                    show: true,
-                    splitNumber: 15,
-                    textStyle: {
-                        color: "rgba(255,255,255,.6)",
-                        fontSize: '12',
-                    },
-                },
-            }],
-            yAxis: [{
-                type: 'value',
-                axisLabel: {
-                    //formatter: '{value} %'
-                    show: true,
-                    textStyle: {
-                        color: "rgba(255,255,255,.6)",
-                        fontSize: '12',
-                    },
-                },
-                axisTick: {
-                    show: false,
-                },
-                axisLine: {
-                    show: true,
-                    lineStyle: {
-                        color: "rgba(255,255,255,.1	)",
-                        width: 1,
-                        type: "solid"
-                    },
-                },
-                splitLine: {
-                    lineStyle: {
-                        color: "rgba(255,255,255,.1)",
-                    }
-                }
-            }],
-            series: [
-                {
-
-                    type: 'bar',
-                    data: [1500, 1200, 600, 200, 300, 300, 900],
-                    barWidth: '35%', //柱子宽度
-                    // barGap: 1, //柱子之间间距
-                    itemStyle: {
-                        normal: {
-                            color: '#27d08a',
-                            opacity: 1,
-                            barBorderRadius: 5,
-                        }
-                    }
-                }
-
-            ]
-        };
-
-        // 使用刚指定的配置项和数据显示图表。
-        myChart.setOption(option);
-        window.addEventListener("resize", function () {
-            myChart.resize();
-        });
-    }
-    function echarts_5() {
-        // 基于准备好的dom，初始化echarts实例
-        var myChart = echarts.init(document.getElementById('echart5'));
-
-        option = {
-            //  backgroundColor: '#00265f',
-            tooltip: {
-                trigger: 'axis',
-                axisPointer: {
-                    type: 'shadow'
-                }
-            },
-
-            grid: {
-                left: '0%',
-                top: '10px',
-                right: '0%',
-                bottom: '2%',
-                containLabel: true
-            },
-            xAxis: [{
-                type: 'category',
-                data: ['浙江', '上海', '江苏', '广东', '北京', '深圳', '安徽', '四川'],
-                axisLine: {
-                    show: true,
-                    lineStyle: {
-                        color: "rgba(255,255,255,.1)",
-                        width: 1,
-                        type: "solid"
-                    },
-                },
-
-                axisTick: {
-                    show: false,
-                },
-                axisLabel: {
-                    interval: 0,
-                    // rotate:50,
-                    show: true,
-                    splitNumber: 15,
-                    textStyle: {
-                        color: "rgba(255,255,255,.6)",
-                        fontSize: '12',
-                    },
-                },
-            }],
-            yAxis: [{
-                type: 'value',
-                axisLabel: {
-                    //formatter: '{value} %'
-                    show: true,
-                    textStyle: {
-                        color: "rgba(255,255,255,.6)",
-                        fontSize: '12',
-                    },
-                },
-                axisTick: {
-                    show: false,
-                },
-                axisLine: {
-                    show: true,
-                    lineStyle: {
-                        color: "rgba(255,255,255,.1	)",
-                        width: 1,
-                        type: "solid"
-                    },
-                },
-                splitLine: {
-                    lineStyle: {
-                        color: "rgba(255,255,255,.1)",
-                    }
-                }
-            }],
-            series: [{
-                type: 'bar',
-                data: [2, 3, 3, 9, 15, 12, 6, 4, 6, 7, 4, 10],
-                barWidth: '35%', //柱子宽度
-                // barGap: 1, //柱子之间间距
-                itemStyle: {
-                    normal: {
-                        color: '#2f89cf',
-                        opacity: 1,
-                        barBorderRadius: 5,
-                    }
-                }
-            }
-            ]
-        };
-
-        // 使用刚指定的配置项和数据显示图表。
-        myChart.setOption(option);
-        window.addEventListener("resize", function () {
-            myChart.resize();
-        });
-    }
-
     function echarts_4() {
         // 基于准备好的dom，初始化echarts实例
         var myChart = echarts.init(document.getElementById('echart4'));
@@ -310,7 +123,7 @@ $(function () {
             },
             legend: {
                 top: '0%',
-                data: ['安卓', 'IOS'],
+                data: ['2018', '2019', '2020'],
                 textStyle: {
                     color: 'rgba(255,255,255,.5)',
                     fontSize: '12',
@@ -339,8 +152,7 @@ $(function () {
                     }
 
                 },
-
-                data: ['01', '02', '03', '04', '05', '06', '07', '08', '09', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '24']
+                data: ['1月', '2月', '3月', '4月', '5月', '6月', '7月', '8月', '9月', '10月', '11月', '12月']
 
             }, {
 
@@ -348,9 +160,6 @@ $(function () {
                 axisLine: { show: false },
                 position: 'bottom',
                 offset: 20,
-
-
-
             }],
 
             yAxis: [{
@@ -374,16 +183,24 @@ $(function () {
                     }
                 }
             }],
+            toolbox: {
+                feature: {
+                    magicType:{
+                        title:"22",
+                        show: true,
+                        type: 'line',
+                    }
+                },
+            },
             series: [
                 {
-                    name: '安卓',
+                    name: '2019',
                     type: 'line',
                     smooth: true,
                     symbol: 'circle',
                     symbolSize: 5,
                     showSymbol: false,
                     lineStyle: {
-
                         normal: {
                             color: '#0184d5',
                             width: 2
@@ -408,11 +225,11 @@ $(function () {
                             borderWidth: 12
                         }
                     },
-                    data: [3, 4, 3, 4, 3, 4, 3, 6, 2, 4, 2, 4, 3, 4, 3, 4, 3, 4, 3, 6, 2, 4, 2, 4]
+                    data: [23, 4, 3, 4, 3, 4, 3, 21, 2, 4, 2, 4, 3, 4, 3, 4, 3, 4, 3, 6, 2, 4, 2, 4]
 
                 },
                 {
-                    name: 'IOS',
+                    name: '2018',
                     type: 'line',
                     smooth: true,
                     symbol: 'circle',
@@ -428,7 +245,7 @@ $(function () {
                     areaStyle: {
                         normal: {
                             color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
-                                offset: 0,
+                                offset: 0,  
                                 color: 'rgba(0, 216, 135, 0.4)'
                             }, {
                                 offset: 0.8,
@@ -601,21 +418,22 @@ $(function () {
             myChart.resize();
         });
     }
-    function echarts_31() {
+    function echartsDeviceStatus() {
         // 基于准备好的dom，初始化echarts实例
-        var myChart = echarts.init(document.getElementById('fb1'));
+        var myChart = echarts.init(document.getElementById('deviceStaus'));
         option = {
-
             title: [{
+                show:false,
                 text: '设备状态',
-                left: 'center',
+                left: 'left',
+                top:'1',
                 textStyle: {
                     color: '#fff',
                     fontSize: '16'
                 }
-
             }],
             tooltip: {
+                showtip: true,
                 trigger: 'item',
                 formatter: "{a} <br/>{b}: {c} ({d}%)",
                 position: function (p) {   //其中p为当前鼠标的位置
@@ -623,11 +441,12 @@ $(function () {
                 }
             },
             legend: {
-
-                top: '70%',
+                left: '0%',
+                top:'20%',
+                orient: 'vertical',
                 itemWidth: 10,
                 itemHeight: 10,
-                data: ['在线', '空闲', '30-39岁', '40-49岁', '50岁以上'],
+                data: ['在测', '空闲', '故障'],
                 textStyle: {
                     color: 'rgba(255,255,255,.5)',
                     fontSize: '12',
@@ -637,19 +456,20 @@ $(function () {
                 {
                     name: '设备状态',
                     type: 'pie',
-                    center: ['50%', '42%'],
-                    radius: ['40%', '60%'],
-                    color: ['#065aab', '#066eab', '#0682ab', '#0696ab', '#06a0ab', '#06b4ab', '#06c8ab', '#06dcab', '#06f0ab'],
-                    label: { show: false },
+                    selectedMode:'single',
+                    center: ['65%', '50%'],
+                    radius: ['0%', '65%'],
+                    color: ['#06c8ab', '#066eab', '#ff0000'],
+                    label: { show: true },
                     labelLine: { show: true },
                     data: [
-                        { value: 4, name: '在线' },
-                        { value: 1, name: '空闲' },
+                        { value: 18832, name: '在测' },
+                        { value: 932, name: '空闲' },
+                        { value: 2323, name: '故障' },
                     ]
                 }
             ]
         };
-
         // 使用刚指定的配置项和数据显示图表。
         myChart.setOption(option);
         window.addEventListener("resize", function () {
@@ -772,24 +592,178 @@ $(function () {
             myChart.resize();
         });
     }
+    function risk1() {
+        // 基于准备好的dom，初始化echarts实例
+        var myChart = echarts.init(document.getElementById('risk1'));
+        var v2 = 23//一级风险
+        option = {
+            series: [{
+                type: 'pie',
+                radius: ['70%', '80%'],
+                color: '#ff0000',
+                label: {
+                    normal: {
+                        position: 'center'
+                    }
+                },
+                data: [{
+                    value: v2,
+                    name: '一级风险',
+                    label: {
+                        normal: {
+                            formatter: v2 + '',
+                            textStyle: {
+                                fontSize: 20,
+                                color: '#fff',
+                            }
+                        }
+                    }
+                }, {
+                    name: '一级风险',
+                    label: {
+                        normal: {
+                            textStyle: {
+                                color: '#aaa',
+                                fontSize: 12
+                            }
+                        }
+                    },
+                }]
+            }]
+        };
+        myChart.setOption(option);
+        window.addEventListener("resize", function () {
+            myChart.resize();
+        });
+        myChart.on('click', function (params) {
+            console.log(params);
+            alert("一级风险 点击事件触发")
+        });
+    }
+    function risk2() {
+        // 基于准备好的dom，初始化echarts实例
+        var myChart = echarts.init(document.getElementById('risk2'));
+        var v1 = 56//二级风险
+        option = {
+            series: [{
+                type: 'pie',
+                radius: ['70%', '80%'],
+                color: '#ffff00',
+                label: {
+                    normal: {
+                        position: 'center'
+                    }
+                },
+                data: [{
+                    value: v1,
+                    name: '二级风险',
+                    label: {
+                        normal: {
+                            formatter: v1 + '',
+                            textStyle: {
+                                fontSize: 20,
+                                color: '#fff',
+                            }
+                        }
+                    }
+                }, {
+                    name: '二级风险',
+                    label: {
+                        normal: {
+                            textStyle: {
+                                color: '#aaa',
+                                fontSize: 12
+                            }
+                        }
+                    },
+                }]
+            }]
+        };
+        myChart.setOption(option);
+        window.addEventListener("resize", function () {
+            myChart.resize();
+        });
+        myChart.on('click', function (params) {
+            console.log(params);
+            alert("二级风险 点击事件触发")
+        });
+    }
+    function risk3() {
+        // 基于准备好的dom，初始化echarts实例
+        var myChart = echarts.init(document.getElementById('risk3'));
+        var v1 = 223//女消费
+        option = {
+            series: [{
+                type: 'pie',
+                radius: ['70%', '80%'],
+                color: '#1E90FF',
+                label: {
+                    normal: {
+                        position: 'center'
+                    }
+                },
+                data: [{
+                    value: v1,
+                    name: '三级风险',
+                    label: {
+                        normal: {
+                            formatter: v1 + '',
+                            textStyle: {
+                                fontSize: 20,
+                                color: '#fff',
+                            }
+                        }
+                    }
+                }, {
+                    name: '三级风险',
+                    label: {
+                        normal: {
+                            textStyle: {
+                                color: '#aaa',
+                                fontSize: 12
+                            }
+                        }
+                    },
+                }]
+            }]
+        };
+        myChart.setOption(option);
+        window.addEventListener("resize", function () {
+            myChart.resize();
+        });
+        myChart.on('click', function (params) {
+            console.log(params);
+            alert("三级风险 点击事件触发")
+        });
+    }
+    // 表单滚动效果
+    $(document).ready(function () {
+        var html = $(".wrap ul").html()
+        $(".wrap ul").append(html)
+        var ls = $(".wrap li").length / 2 + 1
+        i = 0
+        ref = setInterval(function () {
+            i++
+            if (i == ls) {
+                i = 1
+                $(".wrap ul").css({ marginTop: 0 })
+                $(".wrap ul").animate({ marginTop: -'.52' * i + 'rem' }, 1000)
+            }
+            $(".wrap ul").animate({ marginTop: -'.52' * i + 'rem' }, 1000)
 
-
+        }, 2400);
+        var html2 = $(".adduser ul").html()
+        $(".adduser ul").append(html2)
+        var ls2 = $(".adduser li").length / 2 + 1
+        a = 0
+        ref = setInterval(function () {
+            a++
+            if (a == ls2) {
+                a = 1
+                $(".adduser ul").css({ marginTop: 0 })
+                $(".adduser ul").animate({ marginTop: -'.5' * a + 'rem' }, 800)
+            }
+            $(".adduser ul").animate({ marginTop: -'.5' * a + 'rem' }, 800)
+        }, 4300);
+    })
 })
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
