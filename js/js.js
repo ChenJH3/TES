@@ -1,17 +1,16 @@
-﻿
-$(function () {
+﻿$(function () {
     echartsDeviceStatus();
     echarts_1();
-//     echarts_2();
+    //     echarts_2();
     echarts_4();
     risk1();
     risk2();
     risk3();
     // echarts_32();
-  //  echarts_33();
+    //  echarts_33();
     // echarts_5();
     // echarts_6();
- 
+
     function echarts_1() {
         // 基于准备好的dom，初始化echarts实例
         var myChart = echarts.init(document.getElementById('echart1'));
@@ -87,7 +86,7 @@ $(function () {
             series: [
                 {
                     type: 'bar',
-                    data: [20, 30, 32, 19, 15, 10,26 ,23],
+                    data: [20, 30, 32, 19, 15, 10, 26, 23],
                     barWidth: '35%', //柱子宽度
                     // barGap: 1, //柱子之间间距
                     itemStyle: {
@@ -185,8 +184,8 @@ $(function () {
             }],
             toolbox: {
                 feature: {
-                    magicType:{
-                        title:"22",
+                    magicType: {
+                        title: "22",
                         show: true,
                         type: 'line',
                     }
@@ -245,7 +244,7 @@ $(function () {
                     areaStyle: {
                         normal: {
                             color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
-                                offset: 0,  
+                                offset: 0,
                                 color: 'rgba(0, 216, 135, 0.4)'
                             }, {
                                 offset: 0.8,
@@ -423,10 +422,10 @@ $(function () {
         var myChart = echarts.init(document.getElementById('deviceStaus'));
         option = {
             title: [{
-                show:false,
+                show: false,
                 text: '设备状态',
                 left: 'left',
-                top:'1',
+                top: '1',
                 textStyle: {
                     color: '#fff',
                     fontSize: '16'
@@ -441,8 +440,8 @@ $(function () {
                 }
             },
             legend: {
-                left: '0%',
-                top:'20%',
+                right: '0%',
+                top: '15%',
                 orient: 'vertical',
                 itemWidth: 10,
                 itemHeight: 10,
@@ -456,16 +455,15 @@ $(function () {
                 {
                     name: '设备状态',
                     type: 'pie',
-                    selectedMode:'single',
-                    center: ['65%', '50%'],
-                    radius: ['0%', '65%'],
-                    color: ['#06c8ab', '#066eab', '#ff0000'],
-                    label: { show: true },
-                    labelLine: { show: true },
+                    selectedMode: 'single',
+                    center: ['50%', '45%'],
+                    radius: ['25%', '75%'],
+                    color: ['#86c8ab', '#066eab', '#ff0000'],
+                    label: { show: false },
                     data: [
-                        { value: 18832, name: '在测' },
-                        { value: 932, name: '空闲' },
-                        { value: 2323, name: '故障' },
+                        { value: 26189, name: '在测' },
+                        { value: 2410, name: '空闲' },
+                        { value: 612, name: '故障' },
                     ]
                 }
             ]

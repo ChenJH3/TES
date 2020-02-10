@@ -37,8 +37,7 @@
   </div>
   <div class="head">
     <h1>CATL 宁德时代 测试异常预警监控平台</h1>
-    <div class="weather">
-      <span id="showTime"></span></div>
+    <div class="weather"><span id="showTime"></span></div>
     <script>
       var t = setTimeout(time, 1000);//开始运行
       function time() {
@@ -50,60 +49,92 @@
         var h = dt.getHours();//获取时
         var m = dt.getMinutes();//获取分
         var s = dt.getSeconds();//获取秒
-        document.getElementById("showTime").innerHTML = y + "年" + mt + "月" + day + "日 " + h + "时" + m + "分" + s + "秒";
+        var w = dt.getDay();
+        if (w == 0) w = "星期日";
+        if (w == 1) w = "星期一";
+        if (w == 2) w = "星期二";
+        if (w == 3) w = "星期三";
+        if (w == 4) w = "星期四";
+        if (w == 5) w = "星期五";
+        if (w == 6) w = "星期六";
+        document.getElementById("showTime").innerHTML = y + "年" + mt + "月" + day + "日 " + h + "时" + m + "分" + s + "秒 " + w;
         t = setTimeout(time, 1000); //设定定时器，循环运行     
       }
     </script>
   </div>
   <div class="mainbox">
+
+    <ul class="clearfix">
+      <li style="width:70.5%">
+        <div class="boxall" style="height: 2.0rem">
+          <div class="alltitle">现场设备运行状态</div>
+          <div style="height:90%; width: 100%;">
+            <div class="bar">
+              <div class="barbox">
+                <ul class="clearfix">
+                  <li class="pulll_left counter">26189</li>
+                  <li class="pulll_left counter">2410</li>
+                </ul>
+              </div>
+              <div class="barbox2">
+                <ul class="clearfix">
+                  <li class="pulll_left">在测通道数</li>
+                  <li class="pulll_left">空闲通道数</li>
+                </ul>
+              </div>
+            </div>
+            <div class="sy" id="deviceStaus"></div>
+            
+          <div class="boxfoot"></div>
+          </div>
+      </li>
+      <li style="width: 29.5%">
+        <div class="boxall" style="height: 2.0rem">
+
+          <div class="alltitle">预警统计</div>
+          <div class="risk1">
+            <div id="risk1"></div>
+          </div>
+          <div class="risk2">
+            <div id="risk2"></div>
+          </div>
+          <div class="risk3">
+            <div id="risk3"></div>
+          </div>
+          <div class="boxfoot"></div>
+        </div>
+      </li>
+
+    </ul>
+
     <ul class="clearfix">
       <li>
-        <div class="boxall" style="height: 2.0rem">
-          <div style="height:100%; width: 100%;">
-            <div class="sy" id="deviceStaus"></div>
-          </div>
-          <div class="boxfoot">
-          </div>
-        </div>
         <div class="boxall" style="height: 3.4rem">
-          <div class="alltitle">测试报警统计</div>
+          <div class="alltitle">测试异常报警统计</div>
           <div class="allnav" id="echart1"></div>
           <div class="boxfoot"></div>
         </div>
 
         <div class="boxall" style="height:3.9rem">
-          <div class="alltitle">测试异常统计</div>
+          <div class="alltitle">测试异常预警统计</div>
           <div class="allnav" id="echart4"></div>
           <div class="boxfoot"></div>
         </div>
       </li>
       <li>
-        <div class="bar">
-          <div class="barbox">
-            <ul class="clearfix">
-              <li class="pulll_left counter">126189</li>
-              <li class="pulll_left counter">2410</li>
-            </ul>
-          </div>
-          <div class="barbox2">
-            <ul class="clearfix">
-              <li class="pulll_left">在测通道数</li>
-              <li class="pulll_left">空闲通道数</li>
-            </ul>
-          </div>
-        </div>
+
 
         <div class="map">
           <div class="map1"><img src="picture/lbx.png"></div>
           <div class="map2"><img src="picture/jt.png"></div>
           <div class="map3"><img src="picture/map.png"></div>
-          <div class="boxall" style="height: 7.4rem;margin-top:.2rem;">
+          <div class="boxall" style="height: 7.45rem;">
 
-            <div class="alltitle">报警统计</div>
+            <div class="alltitle">实时预警信息</div>
             <div class="wrap">
               <ul>
                 <li>
-                  <p class="tabs">T3-20191215-1220 - Cycle - 2020/1/2 13:42:75 - 一级</p>
+                  <p>T3-20191215-1220 - Cycle - 2020/1/2 13:42:75 - 一级</p>
                 </li>
                 <li>
                   <p>T3-20191215-1220 - Cycle - 2020/1/2 13:42:75 - 一级</p>
@@ -122,30 +153,86 @@
                 </li>
               </ul>
             </div>
+
+            <table class="table1" width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tbody>
+                <tr>
+                  <th scope="col">排名</th>
+                  <th scope="col">名称</th>
+                  <th scope="col">金额</th>
+                </tr>
+                <tr>
+                  <td><span>1</span></td>
+                  <td>腾讯科技</td>
+                  <td>114万<br></td>
+                </tr>
+                <tr>
+                  <td><span>2</span></td>
+                  <td>百度公司</td>
+                  <td>923823万</td>
+                </tr>
+                <tr>
+                  <td><span>3</span></td>
+                  <td>新浪</td>
+                  <td>1240253万</td>
+                </tr>
+                <tr>
+                  <td><span>4</span></td>
+                  <td>网易</td>
+                  <td>1.2亿</td>
+                </tr>
+                <tr>
+                  <td><span>5</span></td>
+                  <td>雅虎</td>
+                  <td>13423万</td>
+                </tr>
+                <tr>
+                  <td><span>6</span></td>
+                  <td>雅虎</td>
+                  <td>13423万</td>
+                </tr>
+              </tbody>
+            </table>
             <div class="boxfoot"></div>
           </div>
         </div>
       </li>
       <li>
-        <div class="boxall" style="height: 2.0rem">
-          <div class="alltitle">预警统计</div>
-          <div class="risk1">
-            <div id="risk1"></div>
-          </div>
-          <div class="risk2">
-            <div id="risk2"></div>
-          </div>
-          <div class="risk3">
-            <div id="risk3"></div>
-          </div>
-          <div class="boxfoot"></div>
-        </div>
-        <div class="boxall" style="height: 7.45rem">
-          <div class="alltitle">预警统计</div>
+        <div class="boxall" style="height: 3.4rem">
+          <div class="alltitle">历史报警信息<span class="more">查看更多</span></div>
           <div class="wrap">
             <ul>
               <li>
                 <p>T3-20191215-1220 - Cycle - 2020/1/2 13:42:75 - 一级</p>
+
+              </li>
+              <li>
+                <p>T3-20191215-1220 - Cycle - 2020/1/2 13:42:75 - 一级</p>
+              </li>
+              <li>
+                <p>T3-20191215-1220 - Cycle - 2020/1/2 13:42:75 - 二级</p>
+              </li>
+              <li>
+                <p>T3-20191215-1220 - Cycle - 2020/1/2 13:42:75 - 一级</p>
+              </li>
+              <li>
+                <p>T3-20191215-1220 - Cycle - 2020/1/2 13:42:75 - 一级</p>
+              </li>
+              <li>
+                <p>T3-20191215-1220 - Cycle - 2020/1/2 13:42:75 - 一级</p>
+              </li>
+            </ul>
+          </div>
+          <div class="boxfoot"></div>
+        </div>
+
+        <div class="boxall" style="height: 3.9rem">
+          <div class="alltitle">异常报警处理情况<span class="more">查看更多</span></div>
+          <div class="wrap">
+            <ul>
+              <li>
+                <p>T3-20191215-1220 - Cycle - 2020/1/2 13:42:75 - 一级</p>
+
               </li>
               <li>
                 <p>T3-20191215-1220 - Cycle - 2020/1/2 13:42:75 - 一级</p>
@@ -167,7 +254,6 @@
           <div class="boxfoot"></div>
         </div>
       </li>
-    </ul>
   </div>
   <script type="text/javascript" src="js/jquery.waypoints.min.js"></script>
   <script type="text/javascript" src="js/jquery.countup.min.js"></script>
